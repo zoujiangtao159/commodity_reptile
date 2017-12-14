@@ -30,7 +30,7 @@ def get_ebaycom(userid,data=None):
     proxies = {"http": '111.13.2.131:80'}
     s = requests.session()
     #print(url,cookies,headers)
-    wb_data = s.get(url, cookies=cookies, headers=headers,proxies=proxies)
+    wb_data = s.get(url, cookies=cookies, headers=headers)
     result_res = wb_data.content.decode(encoding='utf-8')
     #print('----------------------\n',result_res)
     soup = BeautifulSoup(result_res,'lxml')
@@ -51,7 +51,7 @@ def get_ebaycom(userid,data=None):
         listen_song_number(userid,number)
 
 
-conn = pymysql.connect(host='localhost',user='root', passwd='qwer@1234', db='bdm252107406_db', use_unicode=True,charset="utf8")
+conn = pymysql.connect(host='47.93.26.118',user='root', passwd='qwer@1234', db='bdm252107406_db', use_unicode=True,charset="utf8")
 
 def deffent_source():
     cursor = conn.cursor()
